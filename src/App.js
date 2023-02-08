@@ -17,12 +17,12 @@ function App() {
             setCloth("여자 코트 추천");
           }}>
           {cloth}
-          <span
+          <button
             onClick={() => {
               setCount(count + 1);
             }}>
             👍
-          </span>
+          </button>
           {count}
         </h4>
         <p>2월 17일 발행</p>
