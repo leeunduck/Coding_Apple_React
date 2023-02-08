@@ -14,9 +14,9 @@ function App() {
         <div>React blog</div>
         <button
           onClick={() => {
-            let copy = [...list];
-            copy.sort();
-            setList(copy);
+            let copy = [...list]; //["남자 코트 추천","강남 우동 맛집","파이썬독학",]
+            copy.sort(); //["강남 우동 맛집","남자 코트 추천","파이썬독학",]
+            setList(copy); //["강남 우동 맛집","남자 코트 추천","파이썬독학",]
           }}>
           sort
         </button>
@@ -34,9 +34,9 @@ function App() {
         </h4>
         <button
           onClick={() => {
-            let copy = [...list];
-            copy[0] = "여자 코트 추천";
-            setList(copy);
+            let copy = [...list]; //["남자 코트 추천","강남 우동 맛집","파이썬독학",]
+            copy[0] = "여자 코트 추천"; //["여자 코트 추천","강남 우동 맛집","파이썬독학",]
+            setList(copy); //["여자 코트 추천","강남 우동 맛집","파이썬독학",]
           }}>
           change
         </button>
@@ -47,9 +47,9 @@ function App() {
         <h4>{list[1]}</h4>
         <button
           onClick={() => {
-            let copy = [...list];
-            copy[1] = "신촌 우동 맛집";
-            setList(copy);
+            let copy = [...list]; //["남자 코트 추천","강남 우동 맛집","파이썬독학",]
+            copy[1] = "신촌 우동 맛집"; //["남자 코트 추천","신촌 우동 맛집","파이썬독학",]
+            setList(copy); //["남자 코트 추천","신촌 우동 맛집","파이썬독학",]
           }}>
           change
         </button>
@@ -60,9 +60,9 @@ function App() {
         <h4>{list[2]}</h4>
         <button
           onClick={() => {
-            let copy = [...list];
-            copy[2] = "js";
-            setList(copy);
+            let copy = [...list]; //["남자 코트 추천","강남 우동 맛집","파이썬독학",]
+            copy[2] = "js"; //["남자 코트 추천","강남 우동 맛집","js",]
+            setList(copy); //["남자 코트 추천","강남 우동 맛집","js",]
           }}>
           change
         </button>
