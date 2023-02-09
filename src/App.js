@@ -8,9 +8,10 @@ function App() {
     "파이썬독학",
   ]);
   let [count, setCount] = useState(0);
+  let [modal, setModal] = useState(false);
   return (
     <div className="App">
-      <Modal></Modal>
+      {modal === true ? <Modal /> : null}
       <div className="black-nav">
         <div>React blog</div>
         <button
@@ -22,6 +23,12 @@ function App() {
           sort
         </button>
       </div>
+      <button
+        onClick={() => {
+          setModal(!modal);
+        }}>
+        모달
+      </button>
       <div className="list">
         <h4>
           {list[0]}
