@@ -10,6 +10,7 @@ function App() {
   let [count, setCount] = useState(0);
   return (
     <div className="App">
+      <Modal></Modal>
       <div className="black-nav">
         <div>React blog</div>
         <button
@@ -68,6 +69,16 @@ function App() {
         </button>
         <p>2월 17일 발행</p>
       </div>
+    </div>
+  );
+}
+
+function Modal() {
+  return (
+    <div className="modal">
+      <h4>제목</h4>
+      <p>날짜</p>
+      <p>상세내용</p>
     </div>
   );
 }
