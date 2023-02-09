@@ -20,8 +20,8 @@ function App() {
           <div className="list" key={i}>
             <button
               onClick={() => {
-                let copy = [...count];
-                copy[i] = copy[i] + 1;
+                let copy = [...count]; // [0, 0, 0]
+                copy[i] = copy[i] + 1; // [0[0] + 1], [0[1] + 1], [0[2] + 1]
                 setCount(copy);
               }}>
               count
