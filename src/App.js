@@ -7,6 +7,7 @@ function App() {
     "강남 우동 맛집",
     "파이썬독학",
   ]);
+  const [title, setTitle] = useState(0);
   let [count, setCount] = useState([0, 0, 0]);
   let [modal, setModal] = useState(false);
   return (
@@ -15,7 +16,7 @@ function App() {
         <div>React blog</div>
       </div>
 
-      {list.map(function (title, i) {
+      {list.map(function (a, i) {
         return (
           <div className="list" key={i}>
             <button
@@ -33,8 +34,9 @@ function App() {
             <h4
               onClick={() => {
                 setModal(!modal);
+                setTitle(i);
               }}>
-              {title}
+              {list[i]}
             </h4>
             <p>2월 17일 발행</p>
           </div>
@@ -49,7 +51,9 @@ function App() {
         }}>
         sort
       </button>
-      {modal === true ? <Modal list={list} setList={setList} /> : null}
+      {modal === true ? (
+        <Modal list={list} setList={setList} title={title} />
+      ) : null}
     </div>
   );
 }
@@ -65,7 +69,7 @@ function Modal(props) {
         }}>
         글수정
       </button>
-      <h4>{props.list[0]}</h4>
+      <h4>{props.list[props.title]}</h4>
       <p>날짜</p>
       <p>상세내용</p>
     </div>
