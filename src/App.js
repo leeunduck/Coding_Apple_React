@@ -30,18 +30,17 @@ function App() {
               <span>👍</span>
               {count[i]}
             </div>
-            <h4>{title}</h4>
+            <h4
+              onClick={() => {
+                setModal(!modal);
+              }}>
+              {title}
+            </h4>
             <p>2월 17일 발행</p>
           </div>
         );
       })}
 
-      <button
-        onClick={() => {
-          setModal(!modal);
-        }}>
-        모달
-      </button>
       <button
         onClick={() => {
           let copy = [...list]; //["남자 코트 추천","강남 우동 맛집","파이썬독학",]
@@ -50,15 +49,23 @@ function App() {
         }}>
         sort
       </button>
-      {modal === true ? <Modal /> : null}
+      {modal === true ? <Modal list={list} setList={setList} /> : null}
     </div>
   );
 }
 
-function Modal() {
+function Modal(props) {
   return (
     <div className="modal">
-      <h4>제목</h4>
+      <button
+        onClick={() => {
+          let copy = [...props.list];
+          copy[0] = "여자코트 추천";
+          props.setList(copy);
+        }}>
+        글수정
+      </button>
+      <h4>{props.list[0]}</h4>
       <p>날짜</p>
       <p>상세내용</p>
     </div>

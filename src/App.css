@@ -20,3 +20,6 @@ div {
   background: #eee;
   text-align: left;
 }
+h4 {
+  cursor: pointer;
+}
