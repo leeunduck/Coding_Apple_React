@@ -10,10 +10,26 @@ function App() {
   const [title, setTitle] = useState(0);
   let [count, setCount] = useState([0, 0, 0]);
   let [modal, setModal] = useState(false);
+  let [input, setInput] = useState("");
+
   return (
     <div className="App">
       <div className="black-nav">
         <div>React blog</div>
+      </div>
+      <div>
+        <input
+          onChange={(e) => {
+            setInput(e.target.value);
+          }}></input>
+        <button
+          onClick={() => {
+            let copy = [...list];
+            copy.unshift(input);
+            setList(copy);
+          }}>
+          글 추가
+        </button>
       </div>
 
       {list.map(function (a, i) {
@@ -39,6 +55,14 @@ function App() {
               {list[i]}
             </h4>
             <p>2월 17일 발행</p>
+            <button
+              onClick={() => {
+                let del = [...list];
+                del.splice(i, 1);
+                setList(del);
+              }}>
+              삭제
+            </button>
           </div>
         );
       })}
