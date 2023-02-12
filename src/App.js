@@ -17,20 +17,6 @@ function App() {
       <div className="black-nav">
         <div>React blog</div>
       </div>
-      <div>
-        <input
-          onChange={(e) => {
-            setInput(e.target.value);
-          }}></input>
-        <button
-          onClick={() => {
-            let copy = [...list];
-            copy.unshift(input);
-            setList(copy);
-          }}>
-          글 추가
-        </button>
-      </div>
 
       {list.map(function (a, i) {
         return (
@@ -75,6 +61,20 @@ function App() {
         }}>
         sort
       </button>
+      <div>
+        <input
+          onChange={(e) => {
+            setInput(e.target.value);
+          }}></input>
+        <button
+          onClick={() => {
+            let copy = [...list];
+            copy.unshift(input);
+            setList(copy);
+          }}>
+          글 추가
+        </button>
+      </div>
       {modal === true ? (
         <Modal list={list} setList={setList} title={title} />
       ) : null}
