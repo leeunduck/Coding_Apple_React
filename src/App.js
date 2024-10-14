@@ -1,12 +1,15 @@
 import "./App.css";
 
 function App() {
-  let color = "red";
+  let posts = "강남 우동 맛집";
   return (
     <div className="App">
       <div className="black-nav">
-        <div>블로그</div>
-        <div className={color}>빨간색</div>
+        <div>개발 blog</div>
+      </div>
+      <div className="list">
+        <h4>글제목</h4>
+        <p>2월 17일 발행</p>
       </div>
     </div>
   );
