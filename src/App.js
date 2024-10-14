@@ -1,12 +1,26 @@
+import { useState } from "react";
 import "./App.css";
 
 function App() {
-  let color = "red";
+  let [cloth, setCloth] = useState("남자 코트 추천");
+  let [list, setList] = useState("강남 우동 맛집");
+  let [python, setPython] = useState("파이썬독학");
   return (
     <div className="App">
       <div className="black-nav">
-        <div>블로그</div>
-        <div className={color}>빨간색</div>
+        <div>React blog</div>
+      </div>
+      <div className="list">
+        <h4>{cloth}</h4>
+        <p>2월 17일 발행</p>
+      </div>
+      <div className="list">
+        <h4>{list}</h4>
+        <p>2월 17일 발행</p>
+      </div>
+      <div className="list">
+        <h4>{python}</h4>
+        <p>2월 17일 발행</p>
       </div>
     </div>
   );
