@@ -17,9 +17,19 @@ function App() {
       <div className="list">
         <button
           onClick={() => {
-            setTitle(["여자 코트 추천", "강남 우동 맛집", "파이썬 독학"]);
+            let copy = [...title];
+            copy[0] = "여자 코트 추천";
+            setTitle(copy);
           }}>
           버튼
+        </button>
+        <button
+          onClick={() => {
+            let copy = [...title];
+            copy.sort();
+            setTitle(copy);
+          }}>
+          정렬 버튼
         </button>
         <h4>
           {title[0]}{" "}
