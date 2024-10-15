@@ -13,6 +13,12 @@ function App() {
         <div>React blog</div>
       </div>
       <div className="list">
+        <button
+          onClick={() => {
+            setCloth("여자 코트 추천");
+          }}>
+          버튼
+        </button>
         <h4>
           {cloth}{" "}
           <span
