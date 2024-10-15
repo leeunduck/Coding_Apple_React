@@ -2,9 +2,11 @@ import { useState } from "react";
 import "./App.css";
 
 function App() {
-  let [cloth, setCloth] = useState("남자 코트 추천");
-  let [list, setList] = useState("강남 우동 맛집");
-  let [python, setPython] = useState("파이썬독학");
+  let [title, setTitle] = useState([
+    "남자 코트 추천",
+    "강남 우동 맛집",
+    "파이썬 독학",
+  ]);
   let [count, setCount] = useState(0);
 
   return (
@@ -15,12 +17,12 @@ function App() {
       <div className="list">
         <button
           onClick={() => {
-            setCloth("여자 코트 추천");
+            setTitle(["여자 코트 추천", "강남 우동 맛집", "파이썬 독학"]);
           }}>
           버튼
         </button>
         <h4>
-          {cloth}{" "}
+          {title[0]}{" "}
           <span
             onClick={() => {
               setCount(count + 1);
@@ -32,11 +34,11 @@ function App() {
         <p>2월 17일 발행</p>
       </div>
       <div className="list">
-        <h4>{list}</h4>
+        <h4>{title[1]}</h4>
         <p>2월 17일 발행</p>
       </div>
       <div className="list">
-        <h4>{python}</h4>
+        <h4>{title[2]}</h4>
         <p>2월 17일 발행</p>
       </div>
     </div>
