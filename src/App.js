@@ -8,6 +8,7 @@ function App() {
     "파이썬 독학",
   ]);
   let [count, setCount] = useState(0);
+  let [modal, setModal] = useState(false);
 
   return (
     <div className="App">
@@ -31,6 +32,13 @@ function App() {
           }}>
           정렬 버튼
         </button>
+        <button
+          onClick={() => {
+            setModal(!modal);
+          }}>
+          modal
+        </button>
+        {modal === true ? <Modal></Modal> : null}
         <h4>
           {title[0]}{" "}
           <span
@@ -51,8 +59,6 @@ function App() {
         <h4>{title[2]}</h4>
         <p>2월 17일 발행</p>
       </div>
-
-      <Modal></Modal>
     </div>
   );
 }
